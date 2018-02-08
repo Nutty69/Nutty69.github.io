@@ -1,4 +1,6 @@
-# slimmmo.github.io
+# nutty69.github.io
+
+Based on slimmmo.github.io
 
 Simple [AdVenture Capitalist](http://store.steampowered.com/app/346900/) calculator using averages not cycle time.
 Made with [AngularJS](http://angularjs.org/), [Bootstrap](http://getbootstrap.com/), [ui-bootstrap](https://angular-ui.github.io/bootstrap/), and [Font-Awesome](http://fortawesome.github.io/Font-Awesome/).
@@ -16,6 +18,7 @@ Please let me know if:
 ### To Do:
 
 ### Code
+- Pull Mega Bucks Upgrades out of Cash Upgrades
 - Lots of overlap between resetPlanet, fullyResetPlanet and loadDefaults. Will need a rewrite.
 - Saving and loading formatting is nasty but don't want to save the whole planet since lots of it doesn't need to be saved. Output only the necessary fields (e.g. not upgradeCosts). When loading, load defaults then overwrite them with saved values while checking that the save actually has a value for that variable. This also needs a considerable redesign.
 
