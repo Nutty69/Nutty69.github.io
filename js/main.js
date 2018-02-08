@@ -113,12 +113,12 @@ advApp.filter('rec', function() {
 });
 
 advApp.controller('advController', ['$document', '$filter', '$scope', function($document, $filter, $scope) {
-  $scope.accOpen = [false, false, false, false, false, false, false];
+  $scope.accOpen = [false, false, false, false, false, false, false, false];
   $scope.accOpen2 = [false, false];
   $scope.calcToggle = true;
   $scope.carol = {};
   $scope.cashella = {};
-  $scope.clearAfter = [false, false];
+  $scope.clearAfter = [false, false, false];
   $scope.coins = {};
   $scope.compare = false;
   $scope.earth = {};
@@ -146,7 +146,7 @@ advApp.controller('advController', ['$document', '$filter', '$scope', function($
   ];
   $scope.evil = {};
   $scope.excellent = {};
-  $scope.fillBefore = [false, false];
+  $scope.fillBefore = [false, false, false];
   $scope.filterTime = {'days': null, 'hours': null, 'minutes': null, 'percentage': null};
   $scope.friday = {};
   $scope.gizmo = {};
@@ -881,6 +881,20 @@ advApp.controller('advController', ['$document', '$filter', '$scope', function($
     }
   };
 
+  $scope.checkMegabucks = function(loc, index) {
+    var i = 0;
+    if ($scope.fillBefore[2] && loc.megabucksUpgrades[index][loc.megabucksUpgrades[index].length - 1] == true) {
+      for (; i < index; i++) {
+        loc.megabucksUpgrades[i][loc.megabucksUpgrades[i].length - 1] = true;
+      }
+    }
+    if ($scope.clearAfter[2] && loc.megabucksUpgrades[index][loc.megabucksUpgrades[index].length - 1] == false) {
+      for (i = index + 1; i < loc.megabucksUpgrades.length; i++) {
+        loc.megabucksUpgrades[i][loc.megabucksUpgrades[i].length - 1] = false;
+      }
+    }
+  };
+
   $scope.clickSort = function(loc, index) {
     if (index === $scope.sortIndex) {
       $scope.reverse = !$scope.reverse;
@@ -1366,8 +1380,8 @@ advApp.controller('advController', ['$document', '$filter', '$scope', function($
   };
 
   $scope.setWorld = function(planet) {
-    $scope.clearAfter = [false, false];
-    $scope.fillBefore = [false, false];
+    $scope.clearAfter = [false, false, false];
+    $scope.fillBefore = [false, false, false];
     $scope.compare = false;
     $scope.ref = $scope[planet];
     localStorage.setItem('refWorld', planet);
