@@ -163,6 +163,34 @@
                   </refresher>
                 </div>
               </uib-accordion-group>
+<!-- -->
+<!-- begin attempt to add accordion for Mega Bucks Upgrades -->
+<!-- -->
+              <uib-accordion-group is-open="accOpen[7]">
+                <uib-accordion-heading ng-click="accOpen[7] = !accOpen[7]">
+                  <div class="clickable-panel">
+                    Mega Bucks Upgrades<span class="pull-right fa" ng-class="{'fa-chevron-down': accOpen[7], 'fa-chevron-right': !accOpen[7]}"></span>
+                  </div>
+                </uib-accordion-heading>
+                <div class="well">
+                  <div class="row text-center">
+                    <div class="form-inline col-md-3 col-md-offset-3">
+                      <label><input type="checkbox" class="form-inline" data-ng-model="fillBefore[2]"> Buy All Before Selection (Inclusive)</label>
+                    </div>
+                    <div class="form-inline col-md-3">
+                      <label><input type="checkbox" class="form-inline" data-ng-model="clearAfter[2]"> Clear All After Selection (Inclusive)</label>
+                    </div>
+                  </div>
+                </div>
+                <div class="multicolumn">
+                  <refresher condition="calcToggle">
+                    <div data-ng-repeat="mbupg in ref.megabucksUpgrades track by $index"><label class="strike-when-checked"><input type="checkbox" class="form-inline" data-ng-model="mbupg[2]" data-ng-change="checkMegabucks(ref, $index)"> <span>{{::getNamedType(ref, mbupg)}} (${{::mbupg[0] | num:raw}})</span></label></div>
+                  </refresher>
+                </div>
+              </uib-accordion-group>
+<!-- -->
+<!-- end attempt to add accordion for Mega Bucks Upgrades -->
+<!-- -->
               <uib-accordion-group is-open="accOpen[2]">
                 <uib-accordion-heading ng-click="accOpen[2] = !accOpen[2]">
                   <div class="clickable-panel">
