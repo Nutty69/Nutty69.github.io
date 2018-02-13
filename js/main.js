@@ -700,7 +700,7 @@ advApp.controller('advController', ['$document', '$filter', '$scope', function($
       }
     }
     // Attempting to add code to use megabucksUpgrades
-    for (i = 0; i < loc.megabucksUpgrades.length; i++ {
+    for (i = 0; i < loc.megabucksUpgrades.length; i++) {
       if (tupleIsActive(loc.megabucksUpgrades[i])) {
         applyTuple(loc, loc.megabucksUpgrades[i]);
       }
