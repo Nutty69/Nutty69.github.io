@@ -699,6 +699,13 @@ advApp.controller('advController', ['$document', '$filter', '$scope', function($
         applyTuple(loc, loc.cashUpgrades[i]);
       }
     }
+    // Attempting to add code to use megabucksUpgrades
+    for (i = 0; i < loc.megabucksUpgrades.length; i++ {
+      if (tupleIsActive(loc.megabucksUpgrades[i])) {
+        applyTuple(loc, loc.megabucksUpgrades[i]);
+      }
+    }
+    // End of attempt to add code to use megabucksUpgrades
     applySuperBadge(loc);
     for (i = 0; i < loc.angelUpgrades.length; i++) {
       if (tupleIsActive(loc.angelUpgrades[i])) {
