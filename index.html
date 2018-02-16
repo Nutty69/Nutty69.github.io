@@ -169,7 +169,7 @@
               <uib-accordion-group is-open="accOpen[7]">
                 <uib-accordion-heading ng-click="accOpen[7] = !accOpen[7]">
                   <div class="clickable-panel">
-                    Mega Bucks Upgrades (WORK IN PROGRESS; no recommendations given)<span class="pull-right fa" ng-class="{'fa-chevron-down': accOpen[7], 'fa-chevron-right': !accOpen[7]}"></span>
+                    Mega Bucks Upgrades (WORK IN PROGRESS; no recommendations given)<i data-ng-if="ref.megabucksExclamation" class="fa fa-plus"><span class="pull-right fa" ng-class="{'fa-chevron-down': accOpen[7], 'fa-chevron-right': !accOpen[7]}"></span>
                   </div>
                 </uib-accordion-heading>
                 <div class="well">
@@ -184,7 +184,7 @@
                 </div>
                 <div class="multicolumn">
                   <refresher condition="calcToggle">
-                    <div data-ng-repeat="mbupg in ref.megabucksUpgrades track by $index"><label class="strike-when-checked"><input type="checkbox" class="form-inline" data-ng-model="mbupg[2]" data-ng-change="checkMegabucks(ref, $index)"> <span>{{::getNamedType(ref, mbupg)}} (MB${{::mbupg[0] | num:raw}})</span></label></div>
+                    <div data-ng-repeat="mbupg in ref.megabucksUpgrades track by $index"><label class="strike-when-checked"><input type="checkbox" class="form-inline" data-ng-model="mbupg[3]" data-ng-change="checkMegabucks(ref, $index)"> <span>{{::getNamedType(ref, mbupg)}} ({{::mbupg[0] | num:raw}} AI)<i data-ng-if="mbupg[2]" title="{{mbupg[2] | percentage }} increase in $ / second" class="fa fa-plus"></i></span></label></div>
                   </refresher>
                 </div>
               </uib-accordion-group>
