@@ -535,7 +535,7 @@ advApp.controller('advController', ['$document', '$filter', '$scope', function($
     var i = 0, max = [-1, 0],
     tempPlanet = null;
     loc.megabucksExclamation = false;
-//    if (angular.isDefined(loc.megabucksUpgrades)) {
+    if (angular.isDefined(loc.megabucksUpgrades)) {
       for (; i < loc.megabucksUpgrades.length; i++) {
         console.log("i = ", i, "; loc.megabucksUpgrades.length = ", loc.megabucksUpgrades.length);
 // If an entry is added to index.html to store the user's available Mega Bucks, then use secion #1 below, else use section #2
@@ -567,7 +567,7 @@ advApp.controller('advController', ['$document', '$filter', '$scope', function($
         console.log("max[0] = ", max[0], "; max[1] = ", max[1]);
         console.log("Out of calcMegabucks\n");
       }
-//    }
+    }
     if (max[0] !== -1) {
       loc.bestMegabucks = max[0];
     } else {
