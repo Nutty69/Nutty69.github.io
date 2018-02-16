@@ -476,6 +476,7 @@ advApp.controller('advController', ['$document', '$filter', '$scope', function($
   $scope.calc = function(loc) {
     calcState(loc);
     calcAngels(loc);
+    calcMegabucks(loc);
     calcSuits(loc);
     calcSuperBadges(loc);
     calcRecommendations(loc);
