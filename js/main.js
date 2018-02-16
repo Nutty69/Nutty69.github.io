@@ -530,11 +530,13 @@ advApp.controller('advController', ['$document', '$filter', '$scope', function($
   };
 
   function calcMegabucks(loc) {
+    console.log("In calcMegabucks");
     var i = 0, max = [-1, 0],
     tempPlanet = null;
     loc.megabucksExclamation = false;
 //    if (angular.isDefined(loc.megabucksUpgrades)) {
       for (; i < loc.megabucksUpgrades.length; i++) {
+        console.log("i = ", i, "; loc.megabucksUpgrades.length = ", loc.megabucksUpgrades.length);
 // If an entry is added to index.html to store the user's available Mega Bucks, then use secion #1 below, else use section #2
 //      if (!tupleIsActive(loc.megabucksUpgrades[i]) && loc.megabucksUpgrades[i][0] < loc.numMegabucks) { // section #1
 //        tempPlanet = JSON.parse(JSON.stringify(loc));    // section #1
@@ -544,18 +546,25 @@ advApp.controller('advController', ['$document', '$filter', '$scope', function($
           tempPlanet.megabucksUpgrades[i][tempPlanet.meabucksUpgrades[i].length - 1] = true;
           calcState(tempPlanet);
           var delta = tempPlanet.totalMoneyPerSecond - loc.totalMoneyPerSecond;
+          console.log("delta = ", delta);
           var percent = delta / loc.totalMoneyPerSecond;
+          console.log("percent = ", percent);
           if (delta > 0) {
+            console.log("In delta > 0");
             loc.megabucksUpgrades[i][loc.megabucksUpgrades[i].length - 2] = percent;
             loc.megabucksExclamation = true;
+            console.log("loc.megabucksExclamation = ", loc.megabucksExclamation);
+            console.log("max[1] = ", max[1])
             if (percent > max[1]) {
               max[0] = i;
               max[1] = percent;
+              console.log("max[0] = ", max[0], "; max[1] = ", max[1]);
             }
           } else {
             loc.megabucksUpgrades[i][loc.megabucksUpgrades[i].length - 2] = false;
           }
         }
+        console.log("Out of calcMegabucks");
       }
 //    }
     if (max[0] !== -1) {
