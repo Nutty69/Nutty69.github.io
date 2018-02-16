@@ -544,7 +544,7 @@ advApp.controller('advController', ['$document', '$filter', '$scope', function($
 //        tempPlanet.numAngels -= loc.angelUpgrades[i][0]; // section #1
         if (!tupleIsActive(loc.megabucksUpgrades[i])) { // section #2
           tempPlanet = JSON.parse(JSON.stringify(loc)); // section #2
-          tempPlanet.megabucksUpgrades[i][tempPlanet.meabucksUpgrades[i].length - 1] = true;
+          tempPlanet.megabucksUpgrades[i][tempPlanet.megabucksUpgrades[i].length - 1] = true;
           calcState(tempPlanet);
           var delta = tempPlanet.totalMoneyPerSecond - loc.totalMoneyPerSecond;
           console.log("delta = ", delta);
