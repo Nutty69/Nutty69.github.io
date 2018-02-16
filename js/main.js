@@ -559,13 +559,13 @@ advApp.controller('advController', ['$document', '$filter', '$scope', function($
             if (percent > max[1]) {
               max[0] = i;
               max[1] = percent;
-              console.log("max[0] = ", max[0], "; max[1] = ", max[1]);
             }
           } else {
             loc.megabucksUpgrades[i][loc.megabucksUpgrades[i].length - 2] = false;
           }
         }
-        console.log("Out of calcMegabucks");
+        console.log("max[0] = ", max[0], "; max[1] = ", max[1]);
+        console.log("Out of calcMegabucks\n");
       }
 //    }
     if (max[0] !== -1) {
