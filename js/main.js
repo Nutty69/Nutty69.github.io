@@ -531,13 +531,11 @@ advApp.controller('advController', ['$document', '$filter', '$scope', function($
   };
 
   function calcMegabucks(loc) {
-    console.log("In calcMegabucks");
     var i = 0, max = [-1, 0],
     tempPlanet = null;
     loc.megabucksExclamation = false;
     if (angular.isDefined(loc.megabucksUpgrades)) {
       for (; i < loc.megabucksUpgrades.length; i++) {
-        console.log("i = ", i, "; loc.megabucksUpgrades.length = ", loc.megabucksUpgrades.length);
 // If an entry is added to index.html to store the user's available Mega Bucks, then use secion #1 below, else use section #2
 //      if (!tupleIsActive(loc.megabucksUpgrades[i]) && loc.megabucksUpgrades[i][0] < loc.numMegabucks) { // section #1
 //        tempPlanet = JSON.parse(JSON.stringify(loc));    // section #1
@@ -547,15 +545,10 @@ advApp.controller('advController', ['$document', '$filter', '$scope', function($
           tempPlanet.megabucksUpgrades[i][tempPlanet.megabucksUpgrades[i].length - 1] = true;
           calcState(tempPlanet);
           var delta = tempPlanet.totalMoneyPerSecond - loc.totalMoneyPerSecond;
-          console.log("delta = ", delta);
           var percent = delta / loc.totalMoneyPerSecond;
-          console.log("percent = ", percent);
           if (delta > 0) {
-            console.log("In delta > 0");
             loc.megabucksUpgrades[i][loc.megabucksUpgrades[i].length - 2] = percent;
             loc.megabucksExclamation = true;
-            console.log("loc.megabucksExclamation = ", loc.megabucksExclamation);
-            console.log("max[1] = ", max[1])
             if (percent > max[1]) {
               max[0] = i;
               max[1] = percent;
@@ -564,8 +557,6 @@ advApp.controller('advController', ['$document', '$filter', '$scope', function($
             loc.megabucksUpgrades[i][loc.megabucksUpgrades[i].length - 2] = false;
           }
         }
-        console.log("max[0] = ", max[0], "; max[1] = ", max[1]);
-        console.log("Out of calcMegabucks\n");
       }
     }
     if (max[0] !== -1) {
@@ -747,9 +738,6 @@ advApp.controller('advController', ['$document', '$filter', '$scope', function($
     }
     // Attempting to add code to use megabucksUpgrades
     if (angular.isDefined(loc.megabucksUpgrades)) {
-      console.log("** In calcState **");
-      console.log("loc.megabucksUpgrades.length = ", loc.megabucksUpgrades.length);
-      console.log ("*******");
       for (i = 0; i < loc.megabucksUpgrades.length; i++) {
         if (tupleIsActive(loc.megabucksUpgrades[i])) {
           applyTuple(loc, loc.megabucksUpgrades[i]);
