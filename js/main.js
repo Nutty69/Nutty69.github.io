@@ -930,6 +930,7 @@ advApp.controller('advController', ['$document', '$filter', '$scope', function($
 
   $scope.checkMegabucks = function(loc, index) {
     var i = 0;
+    loc.megabucksUpgrades[index][loc.megabucksUpgrades[index].length - 2] = false;
     if ($scope.fillBefore[2] && loc.megabucksUpgrades[index][loc.megabucksUpgrades[index].length - 1] == true) {
       for (; i < index; i++) {
         loc.megabucksUpgrades[i][loc.megabucksUpgrades[i].length - 1] = true;
