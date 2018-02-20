@@ -934,6 +934,7 @@ advApp.controller('advController', ['$document', '$filter', '$scope', function($
     if ($scope.fillBefore[2] && loc.megabucksUpgrades[index][loc.megabucksUpgrades[index].length - 1] == true) {
       for (; i < index; i++) {
         loc.megabucksUpgrades[i][loc.megabucksUpgrades[i].length - 1] = true;
+        loc.megabucksUpgrades[i][loc.megabucksUpgrades[i].length - 2] = false;
       }
     }
     if ($scope.clearAfter[2] && loc.megabucksUpgrades[index][loc.megabucksUpgrades[index].length - 1] == false) {
