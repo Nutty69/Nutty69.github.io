@@ -1551,7 +1551,7 @@ advApp.controller('advController', ['$document', '$filter', '$scope', function($
       ['Super Bro Dolls', 0, false, 0, 0, 0, 0],
       ['Roast Beast', 0, false, 0, 0, 0, 0]
     ];
-    $scope.cashalot.angelScale = 0.375; // Need to check this
+    $scope.cashalot.angelScale = 45; // Need to check this
     $scope.cashalot.baseCost = [30, 30000, 200000, 9000000000, 35000000000, 1200000000000, 250000000000000, 144000000000000000, 110000000000000000000];
     $scope.cashalot.basePower = [1.1, 1.1, 1.1, 1.1, 1.1, 1.1, 1.1, 1.1, 1.1];
     $scope.cashalot.baseProfit = [10, 1000, 20000, 4.00e07, 2.50e09, 1.60e10, 1.75e13, 7.50e16, 4.25e17];
